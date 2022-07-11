@@ -31,6 +31,9 @@ Route::get('/listings/{listing}/edit',
 // Update Listing
 Route::put('/listings/{listing}', [ListingController::class,'update']);
 
+// Delete Listing
+Route::delete('/listings/{listing}', [ListingController::class,'destroy']);
+
 //SINGLE LISTING 
 Route::get('/listings/{listing}', [ListingController::class,'show']);
 
