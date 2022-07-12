@@ -110,24 +110,25 @@
                 processData: false,
                 contentType: false,
 
-                success: function(dataResult) {
-                    var dataResult = JSON.parse(dataResult);
-                    if (dataResult.statusCode == 200) {
-                        alert(dataResult.message)
-                        window.location = "/";
+                // success: function(dataResult) {
+                //     var dataResult = JSON.parse(dataResult);
+                //     if (dataResult.statusCode == 200) {
+                //         alert(dataResult.message)
+                //         window.location = "/";
+                //     }
+                // },
+               
+                success: function(response) {
+                    if (response.success) {
+                        alert(response.message) 
+                        window.location.href =  '/'
+                    } else {
+                        alert("Error")
                     }
                 },
                 error:function(error){
                     alert("ERROR")
                 }
-
-                // success: function(response) {
-                //     if (response.success) {
-                //         alert(response.message) //Message come from controller
-                //     } else {
-                //         alert("Error")
-                //     }
-                // }
 
             });
         });

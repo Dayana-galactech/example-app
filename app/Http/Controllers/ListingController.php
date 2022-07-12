@@ -50,18 +50,18 @@ class ListingController extends Controller
         $formFields['user_id'] = auth()->id();
 
         Listing::create($formFields);
-        return json_encode(array(
-            "statusCode"=>200,
-            'message' => 'Listing created successfully!',
-        ));
+        // return json_encode(array(
+        //     "statusCode"=>200,
+        //     'message' => 'Listing created successfully!',
+        // ));
 
 
-        // return response()->json(
-        //     [
-        //         'success' => true,
-        //         'message' => 'Listing created successfully!',
-        //     ]
-        // );
+        return response()->json(
+            [
+                'success' => true,
+                'message' => 'Listing created successfully!',
+            ]
+        );
     }
 
     //Show Edit Form
