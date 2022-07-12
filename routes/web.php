@@ -23,7 +23,7 @@ Route::get('/', [ListingController::class,'index']);
 Route::get('/listings/create', [ListingController::class,'create'])->middleware('auth');
 
 //Store Listing Data
-Route::post('/listings', [ListingController::class,'store'])->middleware('auth')->middleware('auth');
+Route::post('/listings', [ListingController::class,'store'])->middleware('auth');
 
 //Show Edit Form
 Route::get('/listings/{listing}/edit',
